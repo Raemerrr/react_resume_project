@@ -1,2 +1,2 @@
 # react_resume_project
-React Toy Project
+ref : https://nordicgiant2.github.io/react-nice-resume-page/#home
