@@ -1,0 +1,114 @@
+:root{
+    --font-color : white;
+    --backgound-color : chocolate;
+    --dark-color: rgb(0, 0, 0, 80%);
+    --green-color: #00DE7A;
+    --black-color: black;
+}
+
+body{
+    margin: 0px;
+    font-family: 'Noto Sans KR';
+}
+
+a{
+    text-decoration: none;
+    color:var(--font-color);
+}
+
+a:hover{
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-color);
+    padding : 8px 12px;
+}
+
+.logo{
+    font-size: 24px;
+    padding:0px 30px;
+    color : var(--font-color);
+}
+
+.logo i {
+    color : var(--green-color);
+    margin: 0px 20px;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.menu li{
+    padding :8px 12px;
+}
+
+.menu li:hover{
+    background-color: var(--backgound-color);
+    border-radius: 4px;
+}
+
+.icons{
+    list-style: none;
+    color: var(--font-color);
+    display: flex;
+}
+
+.icons li {
+    padding: 8px 12px;
+}
+
+.icons i{
+    color: var(--font-color);
+}
+
+.toggleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: var(--green-color);
+}
+
+@media screen and (max-width: 768px) {
+    .navBar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .menu{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu li{
+        width: 100%;
+        text-align: center;
+    }
+
+    .icons{
+        display: none;
+        justify-content: center;
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    .toggleBtn{
+        display: block;
+    }
+
+    .icons.active,
+    .menu.active{
+        display: flex;
+    }
+}
