@@ -1,0 +1,22 @@
+body{
+    margin: 0px;
+    font-family: 'Noto Sans KR';
+}
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color : white;
+}
+
+.home h1{
+    text-shadow: 2px 2px 2px gray;
+}
+
+.home h3{
+    text-shadow: 1px 1px 1px gray;
+}
