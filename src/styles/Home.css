@@ -1,6 +1,15 @@
+:root{
+    --font-color : white;
+    --backgound-color : chocolate;
+    --dark-color: rgb(0, 0, 0, 80%);
+    --green-color: #00DE7A;
+    --black-color: black;
+}
+
 body{
     margin: 0px;
     font-family: 'Noto Sans KR';
+    width: 100%;
 }
 
 
@@ -10,13 +19,15 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color : white;
+    color : var(--font-color);
 }
 
 .home h1{
-    text-shadow: 2px 2px 2px gray;
+    text-shadow: 2px 2px 2px var(--dark-color);
 }
 
 .home h3{
-    text-shadow: 1px 1px 1px gray;
+    text-align: center;
+    padding: 30px;
+    text-shadow: 3px 3px 3px var(--dark-color);
 }

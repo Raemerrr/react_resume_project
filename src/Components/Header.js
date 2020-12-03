@@ -16,7 +16,7 @@ function Header(props) {
       <nav className="navBar">
         <div className="logo">
           <i className="fab fa-android"></i>
-          <a href="#">Raemerrr Blog</a>
+          <a href="#">Raemerrr`s Blog</a>
         </div>
         <ul className="menu">
           <li>

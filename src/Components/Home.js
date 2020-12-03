@@ -13,7 +13,7 @@ function Home(props) {
   return (
     <div>
       <ParticlesBg type="circle" bg={true} />
-      <section className="home">
+      <section className="home" id="home">
         <h1>{name}</h1>
         <h3>{description}</h3>
         <hr />

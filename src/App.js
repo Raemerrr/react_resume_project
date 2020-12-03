@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <Header data={null}/>
       <Home data={null}/>
-      {/* <About data={null}/> */}
+      <About data={null}/>
     </div>
   );
 }
