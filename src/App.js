@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Header from './Components/Header'
 import Home from './Components/Home'
 import About from './Components/About';
-
+import Resume from './Components/Resume';
 function App() {
   const [resumeData, resumeDataSet] = useState({
     main : {
@@ -21,6 +21,7 @@ function App() {
       <Header data={null}/>
       <Home data={null}/>
       <About data={null}/>
+      <Resume data={null}/>
     </div>
   );
 }

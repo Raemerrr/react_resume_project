@@ -11,14 +11,12 @@ function Home(props) {
     descriptionSet(props.data.description);
   }
   return (
-    <div>
+    <section className="home" id="home">
       <ParticlesBg type="circle" bg={true} />
-      <section className="home" id="home">
-        <h1>{name}</h1>
-        <h3>{description}</h3>
-        <hr />
-      </section>
-    </div>
+      <h1>{name}</h1>
+      <h3>{description}</h3>
+      <hr />
+    </section>
   );
 }
 

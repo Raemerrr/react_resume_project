@@ -1,0 +1,39 @@
+:root{
+    --font-color : white;
+    --backgound-color : chocolate;
+    --dark-color: rgb(0, 0, 0, 80%);
+    --green-color: #00DE7A;
+    --black-color: black;
+}
+
+.resume{
+    display: flex;
+    height: 100vh;
+    background-color: cadetblue;
+    justify-content: center;
+    /* justify-content: space-between; */
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px;
+}
+
+ .contents{
+    display: flex;
+    /* justify-self:center; */
+    align-self: flex-start;
+    padding: 50px;
+}
+
+.contentsHeader{
+    padding: 30px;
+}
+
+
+
+/*
+.workContents{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+} */
