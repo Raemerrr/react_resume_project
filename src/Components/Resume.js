@@ -17,9 +17,18 @@ function Resume() {
           <h3>SKILLS</h3>
         </div>
         <div className="document">
-          <h1>C++</h1>
-          <h1>C#</h1>
-          <h1>JavaScript</h1>
+          <div className="skill">
+            <h1>C++</h1>
+            <progress max="100" value="70" />
+          </div>
+          <div className="skill">
+            <h1>C#</h1>
+            <progress max="100" value="85" />
+          </div>
+          <div className="skill">
+            <h1>JavaScript</h1>
+            <progress max="100" value="55" />
+          </div>
         </div>
       </div>
     </section>
