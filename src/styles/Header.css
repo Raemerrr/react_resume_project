@@ -6,6 +6,10 @@
     --black-color: black;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body{
     margin: 0px;
     /* font-family: 'Noto Sans KR'; */
