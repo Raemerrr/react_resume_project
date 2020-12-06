@@ -27,8 +27,6 @@ body{
 }
 
 .content{
-    flex: 1; /* flex: 1 1 0 */
-    overflow: auto;
     width: 47%;
 }
 
@@ -38,6 +36,8 @@ body{
     }
 
     .content{
+        flex: 1;
+        overflow: auto;
         width: 100%;
     }
     
