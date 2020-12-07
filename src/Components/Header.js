@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "../styles/Header.css";
 
 function Header(props) {
-  const [project, projectSet] = useState(
+  const [project, setProject] = useState(
     "https://github.com/Raemerrr/react_resume_project"
   );
-  const [github, githubSet] = useState("https://github.com/Raemerrr/");
+  const [github, setGithub] = useState("https://github.com/Raemerrr/");
   if (props.data) {
-    projectSet(props.ata.project);
-    githubSet(props.data.github);
+    setProject(props.ata.project);
+    setGithub(props.data.github);
   }
 
   function handleToggle(e) {

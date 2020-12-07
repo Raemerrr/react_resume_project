@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import ParticlesBg from "particles-bg";
 import "../styles/Home.css";
 function Home(props) {
-  const [name, nameSet] = useState("Resume Project");
+  const [name, setName] = useState("Resume Project");
   const [description, descriptionSet] = useState(
     "React를 공부하기 위해 재미로 만드는 Web Site!"
   );
   if (props.data) {
-    nameSet(props.data.name);
+    setName(props.data.name);
     descriptionSet(props.data.description);
   }
   return (

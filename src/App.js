@@ -3,6 +3,7 @@ import Header from './Components/Header'
 import Home from './Components/Home'
 import About from './Components/About';
 import Resume from './Components/Resume';
+import Works from './Components/Works';
 function App() {
   const [resumeData, resumeDataSet] = useState({
     main : {
@@ -22,6 +23,7 @@ function App() {
       <Home data={null}/>
       <About data={null}/>
       <Resume data={null}/>
+      <Works data={null}/>
     </div>
   );
 }

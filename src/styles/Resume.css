@@ -17,7 +17,6 @@
 
 .contents{
     display: flex;
-    /* justify-content: center; */
     margin: 50px 0px;
 }
 
@@ -33,6 +32,7 @@
 
 .document{
     text-align: left;
+    list-style-type: none;
 }
 
 progress {
@@ -52,24 +52,6 @@ progress {
     
   }
 
- /* .contents{
-    display: flex;
-    flex:1;
-    justify-content:space-around;
-    width: 100%;
-}
-
-.title{
-    display: flex;
-    align-self: flex-start;
-}
-
-.document{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-} */
-
 @media screen and (max-width: 768px) {
     .contents{
         padding:0;
@@ -81,6 +63,11 @@ progress {
 
     .document h1{
         font-size: 0.9rem;
+    }
+
+    .contents .title,
+    .contents .document{
+        margin: 0px;
     }
 
     progress {
@@ -95,5 +82,4 @@ progress {
       background: #FFF;
       box-shadow: inset 0 -2px 4px rgba(0,0,0,0.4), 0 2px 5px 0px rgba(0,0,0,0.3); 
     } 
-    /* environnement styles */
 }
