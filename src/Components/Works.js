@@ -1,39 +1,53 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Works.css";
-import axios from "axios";
 
-function Works() {
+const Works = (props) => {
   const [commits, setCommits] = useState([]);
 
+  const getData = (data) => {
+    //여기선 of문법을 이용해본다. (*주의 IE 지원하지 않음..)
+    const worksDataList = [];
+    for (let i of data) {
+      worksDataList.push(
+        <tr>
+          <td>{i.commit.author.date}</td>
+          <td>{i.commit.message}</td>
+        </tr>
+      );
+    }
+    return worksDataList;
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://api.github.com/repos/raemerrr/react_resume_project/commits",
-          {
-            headers: {
-              Authorization: "bearer 883f4a80e416db37bda2da66f0b131625a18eb54",
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        // status : 200 (정상)
-        if (response["status"] && response["status"] === 200) {
-            console.log(JSON.stringify(response));
-        }
-        //setCommits([]);
-      } catch (e) {
-        console.log("error : " + e);
-      }
-    };
-    fetchData();
+    if (props.data) {
+      setCommits(getData(props.data.commits));
+      console.log('commits : ' + commits);
+    }
   }, []);
 
+  useEffect(() => {
+    if (props.data) {
+      setCommits(getData(props.data.commits));
+      console.log('commits : ' + commits);
+    }
+  }, [props.data]);
+
   return (
-  <section id="works">
-    <h1>커밋 기록</h1>
-  </section>
+    <section id="works">
+      <h1>커밋 기록</h1>
+      <div className="tableDiv">
+        <table>
+          <thead>
+            <tr>
+              <th>시간</th>
+              <th>메세지</th>
+            </tr>
+          </thead>
+          <tbody>{commits}</tbody>
+        </table>
+      </div>
+    </section>
   );
-}
+};
 
 export default Works;

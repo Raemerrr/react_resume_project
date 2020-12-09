@@ -1,58 +1,52 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Resume.css";
-import axios from "axios";
 
-function Resume() {
-  const [languages, setLanguages] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://api.github.com/repos/raemerrr/react_resume_project/languages",
-          {
-            headers: {
-              Authorization: "bearer 883f4a80e416db37bda2da66f0b131625a18eb54",
-              "Content-Type": "application/json",
-            },
-          }
+const Resume = (props) => {
+  const [languages, setLanguages] = useState([
+    <li key={1}>
+      <h1>{"C++"}</h1>
+      <progress max={100} value={70} />
+    </li>,
+    <li key={2}>
+      <h1>{"C#"}</h1>
+      <progress max={100} value={80} />
+    </li>,
+    <li key={3}>
+      <h1>{"JavaScript"}</h1>
+      <progress max={100} value={55} />
+    </li>,
+  ]);
+
+  const getData = (data) => {
+    const resumeDataList = [];
+    let total = 0;
+    for (let k in data) {
+      total += data[k];
+    }
+    if (total > 0) {
+      for (let k in data) {
+        resumeDataList.push(
+          <li key={resumeDataList.length}>
+            <h1>{k}</h1>
+            <progress max={100} value={(data[k] / total) * 100} />
+          </li>
         );
-        let itemList = [
-          <li>
-            <h1>{"C++"}</h1>
-            <progress max={100} value={70} />
-          </li>,
-          <li>
-            <h1>{"C#"}</h1>
-            <progress max={100} value={80} />
-          </li>,
-          <li>
-            <h1>{"JavaScript"}</h1>
-            <progress max={100} value={55} />
-          </li>,
-        ];
-        // status : 200 (정상)
-        if (response["status"] && response["status"] === 200) {
-          itemList = [];
-          let total = 0;
-          for (let k in response["data"]){
-            total += response["data"][k];
-          }
-          for (let k in response["data"]) {
-            itemList.push(
-              <li key={itemList.length}>
-                <h1>{k}</h1>
-                <progress max={100} value={(response["data"][k] / total) * 100} />
-              </li>
-            );
-          }
-        }
-        setLanguages(itemList);
-      } catch (e) {
-        console.log("error : " + e);
       }
-    };
-    fetchData();
+    }
+    return resumeDataList;
+  }
+
+  useEffect(() => {
+    if (props.data) {
+      setLanguages(getData(props.data.languages));
+    }
   }, []);
+
+  useEffect(() => {
+    if (props.data) {
+      setLanguages(getData(props.data.languages));
+    }
+  }, [props.data]);
 
   return (
     <section id="resume" className="resume">
@@ -61,8 +55,14 @@ function Resume() {
           <h3>WORK</h3>
         </div>
         <ol className="document">
-          <h1>SAMSUNG S-1 Corporation</h1>
-          <h1>Agram Corporation</h1>
+          <span>
+            <h1>SAMSUNG S-1 Corporation</h1>
+            <p>#Asp.net, #JavaScript, #MS-SQL, #Winform, #Setup Project...</p>
+          </span>
+          <span>
+            <h1>Agram Corporation</h1>
+            <p>#Network Engineer, #CCNA</p>
+          </span>
         </ol>
       </div>
       <div className="contents">
@@ -73,6 +73,6 @@ function Resume() {
       </div>
     </section>
   );
-}
+};
 
 export default Resume;

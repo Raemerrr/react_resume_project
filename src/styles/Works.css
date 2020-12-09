@@ -5,9 +5,36 @@
     padding: 90px;
 }
 
+.tableDiv{
+    width:100%; 
+    height:75vh; 
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+table th {
+    position: sticky;
+    top: 0px;
+    background-color: gray;
+}
+
+table td {
+    width: 180px;
+}
+
 @media screen and (max-width: 768px) {
     #works{
         padding: 55px;
+    }
+
+    .tableDiv{
+        overflow-x:scroll;
     }
 
 }

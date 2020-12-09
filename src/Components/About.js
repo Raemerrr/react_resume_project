@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import img from "../raemerrr.png";
 import "../styles/About.css";
 
-function About(props) {
-  const [aboutMe, setAboutMe] = useState("저는 코딩을 좋아하고 즐기는 사람입니다. React에 관심이 생겨 해당 프로젝트를 진행하게 되었습니다. 프론트엔드 엔지니어로 거듭나도록 하겠습니다.");
-  const [address, setAddress] =useState("🏡 경기도 안산시 단원구 광덕 1로 80");
-  const [email, setEmail] =useState("📩 foals18@gmail.com");
-  if (props.data) {
-    setAboutMe(props.data.adboutMe);
-    setAddress(props.data.contactDetails.address);
-    setEmail(props.data.contactDetails.email);
-  }
+const About = (props) => {
+  const [aboutMe, setAboutMe] = useState("");
+  const [address, setAddress] =useState("");
+  const [email, setEmail] =useState("");
+
+  useEffect(()=>{
+    if (props.data) {
+      setAboutMe(props.data.aboutMe);
+      setAddress(props.data.address);
+      setEmail(props.data.email);
+    }
+  }, []);
+
+  useEffect(()=>{
+    if (props.data) {
+      setAboutMe(props.data.aboutMe);
+      setAddress(props.data.address);
+      setEmail(props.data.email);
+    }
+  }, [props.data]);
+
   return (
     <section id="about">
       <figure className="image">

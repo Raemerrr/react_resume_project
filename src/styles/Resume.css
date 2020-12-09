@@ -9,10 +9,10 @@
 .resume{
     display: flex;
     height: 100vh;
-    background-color: cadetblue;
+    background-color:ivory;
     flex-direction: column;
     width: 100%;
-    padding: 50px 50px;
+    padding: 50px;
 }
 
 .contents{
@@ -65,6 +65,11 @@ progress {
         font-size: 0.9rem;
     }
 
+    .document p{
+        font-size: 0.7rem;
+        color: gray;
+    }
+
     .contents .title,
     .contents .document{
         margin: 0px;
@@ -73,7 +78,8 @@ progress {
     progress {
         height: 15px;
         width: 130px;
-      }
+    }
+
     progress::-webkit-progress-bar {
         background: transparent;
     }  

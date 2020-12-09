@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ParticlesBg from "particles-bg";
 import "../styles/Home.css";
-function Home(props) {
-  const [name, setName] = useState("Resume Project");
-  const [description, descriptionSet] = useState(
-    "React를 공부하기 위해 재미로 만드는 Web Site!"
-  );
-  if (props.data) {
-    setName(props.data.name);
-    descriptionSet(props.data.description);
-  }
+
+const Home = (props) => {
+  const [name, setName] = useState("기본 값");
+  const [description, descriptionSet] = useState("기본 값");
+
+  useEffect(()=>{
+    if(props.data){
+      setName(props.data.name);
+      descriptionSet(props.data.description);
+    }
+  }, []);
+
+  useEffect(()=>{
+    if(props.data){
+      setName(props.data.name);
+      descriptionSet(props.data.description);
+    }
+  }, [props.data]);
+
   return (
     <section className="home" id="home">
       <ParticlesBg type="circle" bg={true} />

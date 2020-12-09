@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Header.css";
 
-function Header(props) {
-  const [project, setProject] = useState(
-    "https://github.com/Raemerrr/react_resume_project"
-  );
-  const [github, setGithub] = useState("https://github.com/Raemerrr/");
-  if (props.data) {
-    setProject(props.ata.project);
-    setGithub(props.data.github);
-  }
+const Header = (props) => {
+  const [project, setProject] = useState("");
+  const [github, setGithub] = useState("");
+
+  useEffect(()=>{
+    if(props.data){
+      setProject(props.data.project);
+      setGithub(props.data.github);
+    }
+  }, []);
+
+  useEffect(()=>{
+    if(props.data){
+      setProject(props.data.project);
+      setGithub(props.data.github);
+    }
+  }, [props.data]);
 
   function handleToggle(e) {
     //e.preventDefault();
