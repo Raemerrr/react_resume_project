@@ -34,7 +34,7 @@ const Resume = (props) => {
       }
     }
     return resumeDataList;
-  }
+  };
 
   useEffect(() => {
     if (props.data) {

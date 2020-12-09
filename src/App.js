@@ -8,7 +8,7 @@ import axios from "axios";
 
 const App = () => {
   const [componentData, componentDataSet] = useState({});
-  const token = "cf1a9e4a56dd46415bb4faf4b7ff3ad30d2599c5";
+  const token = "8c723161781340d48d1ce5b7140188882d20cf15";
 
   const getComponentData = () => {
     const initData = {
@@ -40,7 +40,7 @@ const App = () => {
         method: "get",
         timeout: 8000,
         headers: {
-          Authorization: "token " + token,
+          // Authorization: "token " + token,
           "Content-Type": "application/json",
         },
       })
@@ -61,8 +61,6 @@ const App = () => {
         method: "get",
         timeout: 8000,
         headers: {
-          //해당 API는 토큰이 필요 없어보인다.
-          Authorization: "token " + token,
           "Content-Type": "application/json",
         },
       })
