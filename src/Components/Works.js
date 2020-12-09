@@ -27,12 +27,6 @@ const Works = (props) => {
     if (props.data) {
       setCommits(getData(props.data.commits));
     }
-  }, []);
-
-  useEffect(() => {
-    if (props.data) {
-      setCommits(getData(props.data.commits));
-    }
   }, [props.data]);
 
   return (

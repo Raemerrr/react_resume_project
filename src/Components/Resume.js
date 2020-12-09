@@ -40,12 +40,6 @@ const Resume = (props) => {
     if (props.data) {
       setLanguages(getData(props.data.languages));
     }
-  }, []);
-
-  useEffect(() => {
-    if (props.data) {
-      setLanguages(getData(props.data.languages));
-    }
   }, [props.data]);
 
   return (

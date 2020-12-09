@@ -7,31 +7,25 @@ import Works from "./Components/Works";
 import axios from "axios";
 
 const App = () => {
-  const [componentData, componentDataSet] = useState({});
-  const token = "8c723161781340d48d1ce5b7140188882d20cf15";
-
-  const getComponentData = () => {
-    const initData = {
-      Header: {
-        project: "https://github.com/Raemerrr/react_resume_project",
-        github: "https://github.com/Raemerrr/",
-      },
-      Home: {
-        name: "Resume Project",
-        description: "React를 공부하기 위해 재미로 만드는 Web Site!",
-      },
-      About: {
-        aboutMe:
-          "저는 코딩을 좋아하고 즐기는 사람입니다. React에 관심이 생겨 해당 프로젝트를 진행하게 되었습니다. 프론트엔드 엔지니어로 거듭나도록 하겠습니다.",
-        address: "🏡 경기도 안산시 단원구 광덕 1로 80",
-        email: "📩 foals18@gmail.com",
-      },
-    };
-    return initData;
-  };
+  const [componentData, setComponentData] = useState({
+    Header: {
+      project: "https://github.com/Raemerrr/react_resume_project",
+      github: "https://github.com/Raemerrr/",
+    },
+    Home: {
+      name: "Resume Project",
+      description: "React를 공부하기 위해 재미로 만드는 Web Site!",
+    },
+    About: {
+      aboutMe:
+        "저는 코딩을 좋아하고 즐기는 사람입니다. React에 관심이 생겨 해당 프로젝트를 진행하게 되었습니다. 프론트엔드 엔지니어로 거듭나도록 하겠습니다.",
+      address: "🏡 경기도 안산시 단원구 광덕 1로 80",
+      email: "📩 foals18@gmail.com",
+    },
+  });
+  // const token = "8c723161781340d48d1ce5b7140188882d20cf15";
 
   useEffect(() => {
-    componentDataSet(getComponentData());
     //Resume.js DataSetting
     (async () => {
       await axios({
@@ -45,10 +39,10 @@ const App = () => {
         },
       })
         .then((res) => {
-          const tempComponentData = componentData;
+          const tempComponentData = Object.assign({}, componentData);
           tempComponentData.Resume = {};
           tempComponentData.Resume.languages = res.data;
-          componentDataSet(tempComponentData);
+          setComponentData(tempComponentData);
         })
         .catch((err) => console.error(err));
     })();
@@ -65,14 +59,20 @@ const App = () => {
         },
       })
         .then((res) => {
-          const tempComponentData = componentData;
+          const tempComponentData = Object.assign({}, componentData);
           tempComponentData.Works = {};
           tempComponentData.Works.commits = res.data;
-          componentDataSet(tempComponentData);
+          setComponentData(tempComponentData);
         })
         .catch((err) => console.error(err));
     })();
   }, []);
+
+  useEffect(() => {
+    // console.log("componentData 변경!");
+    // console.log("componentData : " + JSON.stringify(componentData));
+    // setComponentData(componentData);
+  }, [componentData]);
 
   return (
     <div className="App">
