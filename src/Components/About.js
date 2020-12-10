@@ -13,14 +13,6 @@ const About = (props) => {
       setAddress(props.data.address);
       setEmail(props.data.email);
     }
-  }, []);
-
-  useEffect(()=>{
-    if (props.data) {
-      setAboutMe(props.data.aboutMe);
-      setAddress(props.data.address);
-      setEmail(props.data.email);
-    }
   }, [props.data]);
 
   return (

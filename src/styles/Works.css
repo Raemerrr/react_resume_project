@@ -19,8 +19,6 @@ table{
 }
 
 table th {
-    position: sticky;
-    top: 0px;
     background-color: gray;
 }
 

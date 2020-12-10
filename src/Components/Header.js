@@ -10,13 +10,6 @@ const Header = (props) => {
       setProject(props.data.project);
       setGithub(props.data.github);
     }
-  }, []);
-
-  useEffect(()=>{
-    if(props.data){
-      setProject(props.data.project);
-      setGithub(props.data.github);
-    }
   }, [props.data]);
 
   function handleToggle(e) {

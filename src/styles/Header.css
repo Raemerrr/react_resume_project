@@ -8,11 +8,11 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 
 body{
     margin: 0px;
-    /* font-family: 'Noto Sans KR'; */
 }
 
 a{
@@ -22,7 +22,6 @@ a{
 
 a:hover{
     text-decoration: none;
-    /* color: var(--black-color); */
 }
 
 .header{

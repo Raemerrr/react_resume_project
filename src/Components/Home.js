@@ -11,13 +11,6 @@ const Home = (props) => {
       setName(props.data.name);
       descriptionSet(props.data.description);
     }
-  }, []);
-
-  useEffect(()=>{
-    if(props.data){
-      setName(props.data.name);
-      descriptionSet(props.data.description);
-    }
   }, [props.data]);
 
   return (
