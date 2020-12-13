@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ParticlesBg from "particles-bg";
 import "../styles/Home.css";
+import { Tween, SplitWords } from "react-gsap";
 
-const Home = (props) => {
-  const [name, setName] = useState("기본 값");
-  const [description, descriptionSet] = useState("기본 값");
-
-  useEffect(()=>{
-    if(props.data){
-      setName(props.data.name);
-      descriptionSet(props.data.description);
-    }
-  }, [props.data]);
-
+const Home = () => {
   return (
     <section className="home" id="home">
       <ParticlesBg type="circle" bg={true} />
-      <h1>{name}</h1>
-      <h3>{description}</h3>
-      <hr />
+      <div className="animation">
+        <Tween from={{ x: "100vw" }} stagger={0.5} ease="elastic.out(0.1, 0.1)">
+          <SplitWords
+            wrapper={
+              <div style={{ display: "inline-block", fontSize: "40px" }} />
+            }
+          >
+          Welcome to Raemerrr`s Blog.🙇
+          </SplitWords>
+        </Tween>
+      </div>
     </section>
   );
-}
+};
 
 export default Home;

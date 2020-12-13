@@ -38,7 +38,7 @@ const Resume = (props) => {
 
   useEffect(() => {
     if (props.data) {
-      setLanguages(getData(props.data.languages));
+      setLanguages(getData(props.data));
     }
   }, [props.data]);
 

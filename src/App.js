@@ -12,18 +12,15 @@ const App = () => {
       project: "https://github.com/Raemerrr/react_resume_project",
       github: "https://github.com/Raemerrr/",
     },
-    Home: {
-      name: "Resume Project",
-      description: "React를 공부하기 위해 재미로 만드는 Web Site!",
-    },
     About: {
       aboutMe:
         "저는 코딩을 좋아하고 즐기는 사람입니다. React에 관심이 생겨 해당 프로젝트를 진행하게 되었습니다. 프론트엔드 엔지니어로 거듭나도록 하겠습니다.",
-      address: "🏡 경기도 안산시 단원구 광덕 1로 80",
+      address: "🏡 Ansan-si, Gyeonggi-do, Republic of Korea",
       email: "📩 foals18@gmail.com",
     },
   });
-  // const token = "8c723161781340d48d1ce5b7140188882d20cf15";
+  const [resumeData,setResumeData] = useState([]);
+  const [worksData,setWorksData] = useState([]);
 
   useEffect(() => {
     //Resume.js DataSetting
@@ -34,15 +31,11 @@ const App = () => {
         method: "get",
         timeout: 8000,
         headers: {
-          // Authorization: "token " + token,
           "Content-Type": "application/json",
         },
       })
         .then((res) => {
-          const tempComponentData = Object.assign({}, componentData);
-          tempComponentData.Resume = {};
-          tempComponentData.Resume.languages = res.data;
-          setComponentData(tempComponentData);
+          setResumeData(res.data);
         })
         .catch((err) => console.error(err));
     })();
@@ -59,10 +52,7 @@ const App = () => {
         },
       })
         .then((res) => {
-          const tempComponentData = Object.assign({}, componentData);
-          tempComponentData.Works = {};
-          tempComponentData.Works.commits = res.data;
-          setComponentData(tempComponentData);
+          setWorksData(res.data);
         })
         .catch((err) => console.error(err));
     })();
@@ -77,10 +67,10 @@ const App = () => {
   return (
     <div className="App">
       <Header data={componentData.Header} />
-      <Home data={componentData.Home} />
+      <Home/>
       <About data={componentData.About} />
-      <Resume data={componentData.Resume} />
-      <Works data={componentData.Works} />
+      <Resume data={resumeData} />
+      <Works data={worksData} />
     </div>
   );
 };

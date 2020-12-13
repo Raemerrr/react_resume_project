@@ -22,12 +22,6 @@ body{
     color : var(--font-color);
 }
 
-.home h1{
+.animation{
     text-shadow: 2px 2px 2px var(--dark-color);
-}
-
-.home h3{
-    text-align: center;
-    padding: 30px;
-    text-shadow: 3px 3px 3px var(--dark-color);
 }

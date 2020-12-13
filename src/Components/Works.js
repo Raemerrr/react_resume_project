@@ -25,7 +25,7 @@ const Works = (props) => {
 
   useEffect(() => {
     if (props.data) {
-      setCommits(getData(props.data.commits));
+      setCommits(getData(props.data));
     }
   }, [props.data]);
 
