@@ -4,6 +4,8 @@ import "../styles/Home.css";
 import { Tween, SplitWords } from "react-gsap";
 
 const Home = () => {
+  const description = 'Welcome to Raemerrr`s Blog.🙇';
+
   return (
     <section className="home" id="home">
       <ParticlesBg type="circle" bg={true} />
@@ -11,10 +13,10 @@ const Home = () => {
         <Tween from={{ x: "100vw" }} stagger={0.5} ease="elastic.out(0.1, 0.1)">
           <SplitWords
             wrapper={
-              <div style={{ display: "inline-block", fontSize: "40px" }} />
+              <div className="wrapper" />
             }
           >
-          Welcome to Raemerrr`s Blog.🙇
+          {description}
           </SplitWords>
         </Tween>
       </div>
