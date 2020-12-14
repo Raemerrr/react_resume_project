@@ -53,6 +53,9 @@ progress {
   }
 
 @media screen and (max-width: 768px) {
+    .resume{
+        min-height: 100vh;
+    }
     .contents{
         padding:0;
     }

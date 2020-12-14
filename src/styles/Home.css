@@ -28,6 +28,9 @@ body{
 }
 
 @media screen and (max-width: 768px) {
+    .home{
+        min-height: 100vh;
+    }
     .wrapper{
         font-size: 25px;
     }

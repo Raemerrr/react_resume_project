@@ -29,6 +29,7 @@ table td {
 @media screen and (max-width: 768px) {
     #works{
         padding: 55px;
+        min-height: 100vh;
     }
 
     .tableDiv{
