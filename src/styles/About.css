@@ -31,8 +31,21 @@ body{
 }
 
 @media screen and (max-width: 768px) {
+    html {
+      height: -webkit-fill-available;
+    }
+
+    .image img{
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
     #about{
         flex-direction: column;
+        min-height: 100vh;
+        /* mobile viewport bug fix */
         min-height: -webkit-fill-available;
     }
 

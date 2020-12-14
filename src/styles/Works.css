@@ -27,8 +27,14 @@ table td {
 }
 
 @media screen and (max-width: 768px) {
+    html {
+        height: -webkit-fill-available;
+    }
+  
     #works{
         padding: 55px;
+        min-height: 100vh;
+        /* mobile viewport bug fix */
         min-height: -webkit-fill-available;
     }
 

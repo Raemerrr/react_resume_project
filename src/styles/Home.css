@@ -28,7 +28,13 @@ body{
 }
 
 @media screen and (max-width: 768px) {
+    html {
+        height: -webkit-fill-available;
+    }
+    
     .home{
+        min-height: 100vh;
+        /* mobile viewport bug fix */
         min-height: -webkit-fill-available;
     }
     .wrapper{
