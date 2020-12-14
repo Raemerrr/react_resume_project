@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Header.css";
-
+import { Link } from "react-router-dom";
 const Header = (props) => {
   const [project, setProject] = useState("");
   const [github, setGithub] = useState("");
 
-  useEffect(()=>{
-    if(props.data){
+  useEffect(() => {
+    if (props.data) {
       setProject(props.data.project);
       setGithub(props.data.github);
     }
@@ -23,58 +23,65 @@ const Header = (props) => {
       <nav className="navBar">
         <div className="logo">
           <i className="fab fa-android"></i>
-          <a href="#">Raemerrr`s Blog</a>
+          <Link
+              to="/"
+              onClick={(e) => {
+                handleToggle(e);
+              }}
+            >
+              Raemerrr`s Blog
+            </Link>
         </div>
         <ul className="menu">
           <li>
-            <a
-              href="#home"
+            <Link
+              to="/"
               onClick={(e) => {
                 handleToggle(e);
               }}
             >
-              HOME
-            </a>
+              Home
+            </Link>
           </li>
           <li>
-            <a
-              href="#about"
+            <Link
+              to="/About"
               onClick={(e) => {
                 handleToggle(e);
               }}
             >
-              ABOUT
-            </a>
+              About
+            </Link>
           </li>
           <li>
-            <a
-              href="#resume"
+            <Link
+              to="/Resume"
               onClick={(e) => {
                 handleToggle(e);
               }}
             >
               RESUME
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#works"
+            <Link
+              to="/Works"
               onClick={(e) => {
                 handleToggle(e);
               }}
             >
               WORKS
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#contact"
+            <Link
+              to="/Contact"
               onClick={(e) => {
                 handleToggle(e);
               }}
             >
               CONTACT
-            </a>
+            </Link>
           </li>
         </ul>
         <ul className="icons">
@@ -99,7 +106,17 @@ const Header = (props) => {
             </a>
           </li>
         </ul>
-        <a
+        <Link
+              to="#!"
+              className="toggleBtn"
+          onClick={(e) => {
+            e.preventDefault();
+            handleToggle(e);
+          }}
+            >
+              <i className="fas fa-bars"></i>
+            </Link>
+        {/* <a
           href="#"
           className="toggleBtn"
           onClick={(e) => {
@@ -108,10 +125,10 @@ const Header = (props) => {
           }}
         >
           <i className="fas fa-bars"></i>
-        </a>
+        </a> */}
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

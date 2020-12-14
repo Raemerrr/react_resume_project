@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Components/Header";
-import Home from "./Components/Home";
-import About from "./Components/About";
-import Resume from "./Components/Resume";
-import Works from "./Components/Works";
+import { Header, Home, About, Resume, Works } from "./Components";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from "axios";
 
 const App = () => {
@@ -65,13 +62,15 @@ const App = () => {
   }, [componentData]);
 
   return (
-    <div className="App">
-      <Header data={componentData.Header} />
-      <Home/>
-      <About data={componentData.About} />
-      <Resume data={resumeData} />
-      <Works data={worksData} />
-    </div>
+    <Router>
+        <div>
+          <Header data={componentData.Header} />
+          <Route exact path='/' component={Home}/>
+          <Route path='/About' render={()=><About data={componentData.About} />}/>
+          <Route path='/Resume' render={()=><Resume data={resumeData} />}/>
+          <Route path='/Works' render={()=><Works data={worksData} />}/>
+        </div>
+      </Router>
   );
 };
 
