@@ -54,7 +54,7 @@ progress {
 
 @media screen and (max-width: 768px) {
     .resume{
-        min-height: 100vh;
+        min-height: -webkit-fill-available;
     }
     .contents{
         padding:0;
