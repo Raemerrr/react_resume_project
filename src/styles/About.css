@@ -5,7 +5,7 @@ body{
     font-family: 'Do Hyeon', sans-serif;
 }
 
-#about{
+.about{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +30,16 @@ body{
     width: 47%;
 }
 
+/* 페이지 load, reload Anim */
+.AboutTransition-appear{
+    opacity: 0;
+}
+   
+.AboutTransition-appear.AboutTransition-appear-active{
+  opacity: 1;
+  transition: all .5s ease-in-out;
+}
+
 @media screen and (max-width: 768px) {
     html {
       height: -webkit-fill-available;
@@ -42,7 +52,7 @@ body{
         border-radius: 5px;
     }
 
-    #about{
+    .about{
         flex-direction: column;
         min-height: 100vh;
         /* mobile viewport bug fix */

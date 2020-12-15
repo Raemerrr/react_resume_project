@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import img from "../raemerrr.png";
 import "../styles/About.css";
+import { CSSTransitionGroup } from 'react-transition-group'
 
 const About = (props) => {
   const [aboutMe, setAboutMe] = useState("");
@@ -16,23 +17,31 @@ const About = (props) => {
   }, [props.data]);
 
   return (
-    <section id="about">
-      <figure className="image">
-        <img src={img} alt="missing" />
-        <figcaption>사진은 이주용님의 그림입니다.</figcaption>
-      </figure>
-      <div className="content">
-        <div className="aboutMe">
-          <h2>About Me</h2>
-          <h4>{aboutMe}</h4>
+    <CSSTransitionGroup
+      transitionName="AboutTransition"
+      transitionAppear={true}
+      transitionAppearTimeout={500}
+      transitionEnter={false}
+      transitionLeave={false}
+    >
+      <section className="about">
+        <figure className="image">
+          <img src={img} alt="missing" />
+          <figcaption>사진은 이주용님의 그림입니다.</figcaption>
+        </figure>
+        <div className="content">
+          <div className="aboutMe">
+            <h2>About Me</h2>
+            <h4>{aboutMe}</h4>
+          </div>
+          <div className="contactDetails">
+            <h2>Contact Details</h2>
+            <h4>{address}</h4>
+            <h4>{email}</h4>
+          </div>
         </div>
-        <div className="contactDetails">
-          <h2>Contact Details</h2>
-          <h4>{address}</h4>
-          <h4>{email}</h4>
-        </div>
-      </div>
-    </section>
+      </section>
+    </CSSTransitionGroup>
   );
 }
 

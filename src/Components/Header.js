@@ -24,13 +24,13 @@ const Header = (props) => {
         <div className="logo">
           <i className="fab fa-android"></i>
           <Link
-              to="/"
-              onClick={(e) => {
-                handleToggle(e);
-              }}
-            >
-              Raemerrr`s Blog
-            </Link>
+            to="/"
+            onClick={(e) => {
+              handleToggle(e);
+            }}
+          >
+            Raemerrr`s Blog
+          </Link>
         </div>
         <ul className="menu">
           <li>
@@ -107,17 +107,7 @@ const Header = (props) => {
           </li>
         </ul>
         <Link
-              to="#!"
-              className="toggleBtn"
-          onClick={(e) => {
-            e.preventDefault();
-            handleToggle(e);
-          }}
-            >
-              <i className="fas fa-bars"></i>
-            </Link>
-        {/* <a
-          href="#"
+          to="#!"
           className="toggleBtn"
           onClick={(e) => {
             e.preventDefault();
@@ -125,7 +115,7 @@ const Header = (props) => {
           }}
         >
           <i className="fas fa-bars"></i>
-        </a> */}
+        </Link>
       </nav>
     </header>
   );

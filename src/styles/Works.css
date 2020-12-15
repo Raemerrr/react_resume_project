@@ -1,5 +1,5 @@
 
-#works{
+.works{
     width: 100%;
     height: 100vh;
     padding: 90px;
@@ -26,12 +26,22 @@ table td {
     width: 200px;
 }
 
+/* 페이지 load, reload Anim */
+.WorksTransition-appear{
+    opacity: 0;
+}
+   
+.WorksTransition-appear.WorksTransition-appear-active{
+  opacity: 1;
+  transition: all .5s ease-in-out;
+}
+
 @media screen and (max-width: 768px) {
     html {
         height: -webkit-fill-available;
     }
   
-    #works{
+    .works{
         padding: 55px;
         min-height: 100vh;
         /* mobile viewport bug fix */

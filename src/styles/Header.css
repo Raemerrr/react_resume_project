@@ -21,7 +21,7 @@ a:hover{
 
 .header{
     position : fixed;
-    width: 100%;
+    width: 100vw;
 }
 
 .navBar{
