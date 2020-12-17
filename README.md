@@ -18,3 +18,7 @@
 > CONTACT 페이지 구현 예정
 > 
 > [참고 링크](https://nordicgiant2.github.io/react-nice-resume-page/#home)
+> 
+> ### 2020-12-17  
+>      React에 대한 전반적인 내용은 익혔으나, 조금 더 심화해서 이해가 필요하다고 느껴져서 자료를 찾아보고 있습니다..   
+>      CONTACT페이지를 구현하는 것 보다 우선 조금 더 깊이있는 이해가 필요하다고 생각하여...
